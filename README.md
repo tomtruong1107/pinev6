@@ -12,5 +12,5 @@ TradingView using the OpenAI API.
 
 ## Usage
 
-Navigate to a TradingView chart. A draggable panel appears in the top-right corner with an **Analyze code** button. Clicking it sends the current editor contents and a screenshot to OpenAI and displays recommendations in the panel. The panel can be moved or closed as needed.
+Navigate to a TradingView chart. A draggable panel appears in the top-right corner with an **Analyze code** button. Clicking it sends the current editor contents and recent console output to OpenAI and displays recommendations in the panel. The panel can be moved or closed as needed.
 

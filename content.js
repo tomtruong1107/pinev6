@@ -102,17 +102,29 @@ function extractPineScript() {
   return textarea ? textarea.value : '';
 }
 
+const capturedLogs = [];
+const originalConsoleLog = console.log;
+console.log = (...args) => {
+  capturedLogs.push(args.map(String).join(' '));
+  originalConsoleLog.apply(console, args);
+};
+
+function extractConsoleLog() {
+  return capturedLogs.join('\n');
+}
+
 async function analyzeCode() {
   const btn = document.getElementById('pine-analyze-btn');
   const output = document.getElementById('pine-assistant-output');
   const code = extractPineScript();
+  const consoleLog = extractConsoleLog();
 
   btn.disabled = true;
   btn.textContent = 'Analyzing…';
   output.textContent = '';
 
   try {
-    const response = await chrome.runtime.sendMessage({ type: 'analyze', code });
+    const response = await chrome.runtime.sendMessage({ type: 'analyze', code, consoleLog });
     if (response.error) {
       output.textContent = 'Error: ' + response.error;
     } else {
