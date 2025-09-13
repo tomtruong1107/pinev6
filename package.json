@@ -1,0 +1,8 @@
+{
+  "name": "pinescript-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "node --check background.js && node --check content.js && node --check popup.js"
+  }
+}
