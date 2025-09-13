@@ -1,6 +1,7 @@
 # pinev6
 
-This repository contains a Chrome extension, **PineScript Assistant**, that helps analyze Pine scripts directly on TradingView using the OpenAI API.
+This repository contains a Chrome extension, **PineScript Assistant**, that helps analyze Pine scripts directly on
+TradingView using the OpenAI API.
 
 ## Setup
 
@@ -11,4 +12,5 @@ This repository contains a Chrome extension, **PineScript Assistant**, that help
 
 ## Usage
 
-Navigate to a TradingView chart. A panel appears in the top-right corner with an **Analyze code** button. Clicking it sends the current editor contents and a screenshot to OpenAI and displays recommendations in the panel.
+Navigate to a TradingView chart. A draggable panel appears in the top-right corner with an **Analyze code** button. Clicking it sends the current editor contents and a screenshot to OpenAI and displays recommendations in the panel. The panel can be moved or closed as needed.
+

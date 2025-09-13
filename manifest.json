@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "description": "Analyze Pine scripts on TradingView using OpenAI.",
   "permissions": ["storage", "activeTab", "scripting", "tabs"],
-  "host_permissions": ["https://*.tradingview.com/*"],
+  "host_permissions": [
+    "https://*.tradingview.com/*",
+    "https://api.openai.com/*"
+  ],
   "background": {
     "service_worker": "background.js",
     "type": "module"

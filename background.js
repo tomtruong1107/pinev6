@@ -2,14 +2,15 @@
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'analyze') {
-    handleAnalysis(message.code, sender.tab.id).then(sendResponse);
+    const windowId = sender.tab.windowId;
+    handleAnalysis(message.code, windowId).then(sendResponse);
     return true; // Keep the message channel open for async response
   }
 });
 
-async function handleAnalysis(code, tabId) {
+async function handleAnalysis(code, windowId) {
   try {
-    const screenshot = await chrome.tabs.captureVisibleTab(tabId, { format: 'png' });
+    const screenshot = await chrome.tabs.captureVisibleTab(windowId, { format: 'png' });
     const { apiKey } = await chrome.storage.sync.get('apiKey');
     if (!apiKey) {
       return { error: 'API key not set. Open the extension popup to provide your key.' };
