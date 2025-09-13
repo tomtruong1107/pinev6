@@ -13,6 +13,8 @@ This repository contains a Chrome extension, **PineScript Assistant**, that help
 
 Navigate to a TradingView chart. A draggable panel appears in the top-right corner with an **Analyze code** button. Clicking it sends the current editor contents and recent console output to OpenAI and displays recommendations in the panel. The panel can be moved or closed as needed.
 
+The extension stores your OpenAI API key using Chrome's synced storage so it can authenticate requests from the background service worker.
+
 ## Testing
 
 Run syntax checks on the extension scripts:
